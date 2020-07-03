@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+products = ['eggs', 'milk', 'cheese']
+productPrices = [2.89, 3.29, 5.79]
+productSold = ['eggs', 'eggs', 'cheese', 'milk']
+soldPrice = [2.89, 2.99, 5.97, 3.29].
+<body>
+    <script>
+let products1 = ['eggs', 'milk', 'cheese']
+let productPrices1 = [2.89, 3.29, 5.79]
+let productSold1 = ['eggs', 'eggs', 'cheese', 'milk']
+let soldPrice1 = [2.89, 2.99, 5.97, 3.29]
+
+function priceCheck(products, productPrices, productSold, soldPrice) {
+    let productPricesObj = {}
+    products.forEach((prod, index) => {
+        productPricesObj[prod] = productPrices[index]
+    })
+    let numberOfErrors = productSold.reduce((errors, product, index) => {
+        console.log(productPricesObj[product], soldPrice[index])
+
+        if(productPricesObj[product] != soldPrice[index]) {
+            errors+= 1
+        }
+        return errors
+    }, 0)
+    return numberOfErrors
+}
+
+console.log(priceCheck(products1, productPrices1, productSold1, soldPrice1))
+    </script>
+</body>
+
+</html>
